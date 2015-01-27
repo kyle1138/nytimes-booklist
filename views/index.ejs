@@ -1,0 +1,28 @@
+<html>
+<body>
+
+<% for(book in books){
+
+%><ul>
+  <li>Number# <%=book%></li>
+  <li>Title: <%=books[book]["title"]%></li>
+  <li>Author: <%= books[book]["author"] %></li>
+  <li>Description: <%=books[book]["description"]%></li>
+
+</ul>
+
+
+<% } %>
+
+</br>
+<h2>Add a book below</h2>
+<form action="/book" method="POST">
+  <input type="text" name="title" placeholder="title">
+  <input type="text" name="author" placeholder="author">
+  <input type="text" name="description" placeholder="description">
+  <button>Add the book</button>
+</form>
+
+</body>
+
+</html>

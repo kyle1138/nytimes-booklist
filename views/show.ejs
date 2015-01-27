@@ -1,0 +1,42 @@
+<html>
+<body>
+
+<ul>
+  <li>Number# <%=book["id"]%></li>
+  <li>Title: <%=book["title"]%></li>
+  <li>Author: <%= book["author"] %></li>
+  <li>Description: <%=book["description"]%></li>
+
+
+</ul>
+
+<a href="/books">Return to Full Library</a>
+
+</br>
+
+
+<form action="/book/<%= book['id'] %>/?_method=PUT" method="post">
+
+  
+
+  <input type="text" name="title" value = '<%= book["title"] %>' >
+    <input type="text" name="author" value='<%= book["author"] %>' >
+    <input type="text" name="description" value= '<%= book["description"]%>' >
+    <button>Edit Details</button>
+
+  </form>
+</br>
+<h3>Delete This Book</h3>
+  <form action="/book/<%= book['id'] %>/?_method=DELETE" method="post" enctype="application/x-www-form-urlencoded">
+
+  <input type="hidden" name="_method" value="DELETE"/>
+  <button>Delete This Book</button>
+</form>
+
+
+
+
+
+</body>
+
+</html>
